@@ -1,0 +1,22 @@
+<!-- Navigation -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark fixed-top bg-purple">
+  <div class="container">
+    <a class="navbar-brand" href="/index.html">
+      {% if page.url == "/" %} Welcome!
+      {% else %} GityPictures
+      {% endif %}
+    </a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        {% for item in site.data.navigation %}
+          <li class="nav-item">
+            <a class="nav-link {% if page.url == item.link %}active{% endif %} href="{{ item.link }}"> {{ item.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
